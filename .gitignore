@@ -13,7 +13,6 @@
 *.userprefs
 
 # Build results
-[Dd]ebug/
 [Dd]ebugPublic/
 [Rr]elease/
 [Rr]eleases/
@@ -286,3 +285,12 @@ __pycache__/
 *.btm.cs
 *.odx.cs
 *.xsd.cs
+Debug/ToucanEngine.exe
+ToucanEngine/Debug/ToucanEngine.tlog/CL.command.1.tlog
+ToucanEngine/Debug/ToucanEngine.tlog/CL.read.1.tlog
+ToucanEngine/Debug/ToucanEngine.tlog/CL.write.1.tlog
+ToucanEngine/Debug/ToucanEngine.tlog/link.command.1.tlog
+ToucanEngine/Debug/ToucanEngine.tlog/link.read.1.tlog
+ToucanEngine/Debug/ToucanEngine.tlog/link.write.1.tlog
+ToucanEngine/Debug/ToucanEngine.tlog/ToucanEngine.lastbuildstate
+ToucanEngine/Debug/vc140.idb
