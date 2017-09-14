@@ -1,5 +1,6 @@
 #include "RenderGL.h"
 #include "SDL_opengl.h"
+#include "Square2D.h"
 #include <GL\GLU.h>
 
 RenderGL g_renderGL; //SIngleton
@@ -37,11 +38,11 @@ void RenderGL::render()
 {
 	//Limpiamos pantalla
 	glClear(GL_COLOR_BUFFER_BIT);
+	Square2D mySquare;
+	Vector2 destination(0.5f,0);
+	mySquare.DrawSquare();
+	mySquare.MoveTo(destination);
 
-	glBegin(GL_QUADS);
-		glVertex2f(-0.5f, -0.5f);
-		glVertex2f(0.5f, -0.5f);
-		glVertex2f(0.5f, 0.5f);
-		glVertex2f(-0.5f, 0.5f);
-	glEnd();
 }
+
+
