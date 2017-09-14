@@ -151,6 +151,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Triangle2D.cpp" />
     <ClCompile Include="Square2D.cpp" />
     <ClCompile Include="RenderGL.cpp" />
     <ClCompile Include="Transform.cpp" />
@@ -161,6 +162,7 @@
     <ClInclude Include="Square2D.h" />
     <ClInclude Include="RenderGL.h" />
     <ClInclude Include="Transform.h" />
+    <ClInclude Include="Triangle2D.h" />
     <ClInclude Include="Vector2.h" />
     <ClInclude Include="Vector3.h" />
   </ItemGroup>
