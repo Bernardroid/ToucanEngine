@@ -32,6 +32,7 @@ void RenderGL::liberar()
 
 void RenderGL::update()
 {
+	
 }
 
 void RenderGL::render()
@@ -39,10 +40,7 @@ void RenderGL::render()
 	//Limpiamos pantalla
 	glClear(GL_COLOR_BUFFER_BIT);
 	Square2D mySquare;
-	Vector2 destination(0.5f,0);
 	mySquare.DrawSquare();
-	mySquare.MoveTo(destination);
-
 }
 
 

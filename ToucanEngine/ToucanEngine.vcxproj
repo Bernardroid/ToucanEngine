@@ -150,6 +150,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Color.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Square2D.cpp" />
     <ClCompile Include="RenderGL.cpp" />
@@ -158,6 +159,7 @@
     <ClCompile Include="Vector3.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Color.h" />
     <ClInclude Include="Square2D.h" />
     <ClInclude Include="RenderGL.h" />
     <ClInclude Include="Transform.h" />
