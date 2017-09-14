@@ -34,6 +34,7 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Color.cpp">
+    <ClCompile Include="Triangle2D.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -54,6 +55,7 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Color.h">
+    <ClInclude Include="Triangle2D.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

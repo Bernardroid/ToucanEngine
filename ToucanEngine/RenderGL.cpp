@@ -2,8 +2,9 @@
 #include "SDL_opengl.h"
 #include "Square2D.h"
 #include <GL\GLU.h>
+#include "Primitivas2D.h"
 
-RenderGL g_renderGL; //SIngleton
+RenderGL g_renderGL; //Singleton
 
 RenderGL::RenderGL()
 {
@@ -28,6 +29,7 @@ void RenderGL::inicializar()
 
 void RenderGL::liberar()
 {
+	//delete this
 }
 
 void RenderGL::update()
