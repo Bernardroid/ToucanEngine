@@ -152,6 +152,7 @@
   <ItemGroup>
     <ClCompile Include="Color.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Primitivas2D.cpp" />
     <ClCompile Include="Triangle2D.cpp" />
     <ClCompile Include="Square2D.cpp" />
     <ClCompile Include="RenderGL.cpp" />
@@ -161,6 +162,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Color.h" />
+    <ClInclude Include="Primitivas2D.h" />
     <ClInclude Include="Square2D.h" />
     <ClInclude Include="RenderGL.h" />
     <ClInclude Include="Transform.h" />

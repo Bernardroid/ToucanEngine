@@ -1,8 +1,6 @@
 #pragma once
-#include "Vector2.h"
-#include "Transform.h"
-#include "Color.h"
-class Square2D
+#include "Primitivas2D.h"
+class Square2D : public Primitivas2D
 {
 public:
 	Transform myTransform;

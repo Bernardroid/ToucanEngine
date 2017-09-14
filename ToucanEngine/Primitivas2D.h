@@ -1,5 +1,6 @@
 #include "Transform.h"
 #include "Vector2.h"
+#include "Color.h"
 #pragma once
 class Primitivas2D
 {
