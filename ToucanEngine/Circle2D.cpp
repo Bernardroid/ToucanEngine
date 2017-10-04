@@ -1,14 +1,14 @@
-#include "Triangle2D.h"
+#include "Circle2D.h"
 #include "SDL_opengl.h"
 
 //Sobrecarga de funciones para modificar posicion
-void Triangle2D::SetPosition(Vector2 _pos)
+void Circle2D::SetPosition(Vector2 _pos)
 {
 	myTransform.position.x = _pos.x;
 	myTransform.position.y = _pos.y;
 	myTransform.position.z = 0;
 }
-void Triangle2D::SetPosition(float _x, float _y)
+void Circle2D::SetPosition(float _x, float _y)
 {
 	myTransform.position.x = _x;
 	myTransform.position.y = _y;
@@ -16,25 +16,31 @@ void Triangle2D::SetPosition(float _x, float _y)
 }
 
 //Sobrecarga de funciones para modificar escala
-void Triangle2D::SetScale(Vector2 _scale)
+void Circle2D::SetScale(Vector2 _scale)
 {
 	myTransform.scale.x = _scale.x;
 	myTransform.scale.y = _scale.y;
 }
-void Triangle2D::SetScale(float _x, float _y)
+void Circle2D::SetScale(float _x, float _y)
 {
 	myTransform.scale.x = _x;
 	myTransform.scale.y = _y;
 }
 
+//Modifica el radio del circulo
+void Circle2D::SetRadius(float _r)
+{
+	radius = _r;
+}
+
 //Sobrecarga de funciones para modificar color
-void Triangle2D::SetColor(Vector3 _color)
+void Circle2D::SetColor(Vector3 _color)
 {
 	myColor.r = _color.x;
 	myColor.g = _color.y;
 	myColor.b = _color.z;
 }
-void Triangle2D::SetColor(float _x, float _y, float _z)
+void Circle2D::SetColor(float _x, float _y, float _z)
 {
 	myColor.r = _x;
 	myColor.g = _y;
@@ -42,7 +48,7 @@ void Triangle2D::SetColor(float _x, float _y, float _z)
 }
 
 //Constructor Basico
-Triangle2D::Triangle2D()
+Circle2D::Circle2D()
 {
 	myTransform.position.x = 0;
 	myTransform.position.y = 0;
@@ -50,25 +56,24 @@ Triangle2D::Triangle2D()
 	myTransform.scale.x = 1;
 	myTransform.scale.y = 1;
 	myTransform.scale.z = 0;
-}
-
-//Funcion que modifica los vertices del triangulo
-void Triangle2D::SetTrianglePoints(float _a, float _b, float _c)
-{
-	pointA = _a;
-	pointB = _b;
-	pointC = _c;
+	radius = 0.1f;
 }
 
 //Funcion que imprime cuadrado con los datos de su Transform y Color
-void Triangle2D::Draw()
+void Circle2D::Draw()
 {
 	glPushMatrix();
 	glColor4f(myColor.r, myColor.g, myColor.b, myColor.a);
-	glBegin(GL_TRIANGLES);
-	glVertex2f(-(pointA * myTransform.scale.x) + myTransform.position.x, -(0.1f * myTransform.scale.y) + myTransform.position.y);
-	glVertex2f((pointB * myTransform.scale.x) + myTransform.position.x, -(0.1f * myTransform.scale.y) + myTransform.position.y);
-	glVertex2f((pointC * myTransform.scale.x) + myTransform.position.x, (0.1f * myTransform.scale.y) + myTransform.position.y);
+	
+	glBegin(GL_TRIANGLE_FAN);
+	glVertex2f(myTransform.position.x, myTransform.position.y);
+	for (float i = 1; i < 360; i++)
+	{
+		pointX = myTransform.position.x + cos(i)*radius * myTransform.scale.x;
+		pointY = myTransform.position.y + sin(i)*radius * myTransform.scale.y;
+		glVertex2f(pointX, pointY);
+	}
+	
 	glEnd();
 	glPopMatrix();
 }

@@ -150,9 +150,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Circle2D.cpp" />
     <ClCompile Include="Color.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Primitivas2D.cpp" />
     <ClCompile Include="Triangle2D.cpp" />
     <ClCompile Include="Square2D.cpp" />
     <ClCompile Include="RenderGL.cpp" />
@@ -161,8 +161,8 @@
     <ClCompile Include="Vector3.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Circle2D.h" />
     <ClInclude Include="Color.h" />
-    <ClInclude Include="Primitivas2D.h" />
     <ClInclude Include="Square2D.h" />
     <ClInclude Include="RenderGL.h" />
     <ClInclude Include="Transform.h" />
