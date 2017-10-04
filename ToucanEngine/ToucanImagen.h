@@ -5,14 +5,14 @@
 
 using std::string;
 
-class Toucan_Imagen
+class ToucanImagen
 {
 public:
-	//Constructores
-	Toucan_Imagen();
-	//Carga una imagen de la ubicacion dada 
+	///<summary>Constructores</summary>
+	ToucanImagen();
+	///<summary>Carga una imagen de la ubicacion dada </summary>
 	void CargarImagen(const char * _url);
-	//Dibuja la imagen en su posicion dada
+	///<summary>Dibuja la imagen en su posicion dada </summary>
 	void DibujarImagen(int _x,int _y);
 
 	/*
@@ -31,7 +31,7 @@ private:
 	int width;
 	int height;
 	GLuint textura;
-	SDL_Surface * Imagen;
-	int Mode;
+	SDL_Surface * imagen;
+	int mode;
 
 };

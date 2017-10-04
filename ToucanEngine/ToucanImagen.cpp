@@ -1,15 +1,15 @@
-#include "Toucan_Imagen.h"
-Toucan_Imagen::Toucan_Imagen()
+#include "ToucanImagen.h"
+ToucanImagen::ToucanImagen()
 {
 
 }
-void Toucan_Imagen::CargarImagen(const char * _url)
+void ToucanImagen::CargarImagen(const char * _url)
 {
-	Imagen = IMG_Load(_url);
-	Mode = GL_RGB;
-	if (Imagen->format->BytesPerPixel == 4)
+	imagen = IMG_Load(_url);
+	mode = GL_RGB;
+	if (imagen->format->BytesPerPixel == 4)
 	{
-		Mode = GL_RGBA;
+		mode = GL_RGBA;
 	}
 
 	//Genra la textura y le pone los parametros
@@ -17,14 +17,14 @@ void Toucan_Imagen::CargarImagen(const char * _url)
 	glBindTexture(GL_TEXTURE_2D, textura);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-	glTexImage2D(GL_TEXTURE_2D, 0, Mode, Imagen->w, Imagen->h, 0, Mode, GL_UNSIGNED_BYTE, Imagen->pixels);
-	width = (Imagen->w)*0.01;
-	height = (Imagen->h)*0.01;
+	glTexImage2D(GL_TEXTURE_2D, 0, mode, imagen->w, imagen->h, 0, mode, GL_UNSIGNED_BYTE, imagen->pixels);
+	width = (imagen->w)*0.01;
+	height = (imagen->h)*0.01;
 	
 
 
 }
-void Toucan_Imagen::DibujarImagen(int _x, int _y)
+void ToucanImagen::DibujarImagen(int _x, int _y)
 {
 	glPushMatrix();
 	glBindTexture(GL_TEXTURE_2D, 1);
