@@ -29,10 +29,10 @@ void ToucanImagen::DibujarImagen(int _x, int _y)
 	glPushMatrix();
 	glBindTexture(GL_TEXTURE_2D, 1);
 	glBegin(GL_QUADS);
-	glTexCoord2f(1, 1);	glVertex2f(-_x-(width*0.5), -_y-(height*0.5));
-	glTexCoord2f(0, 1); glVertex2f(_x+(width*0.5), -_y- (height *0.5));
-	glTexCoord2f(0, 0); glVertex2f(_x+ (width *0.5), _y+ (height *0.5));
-	glTexCoord2f(1, 0); glVertex2f(-_x- (width *0.5), _y+ (height *0.5));
+	glTexCoord2f(0, 1);	glVertex2f(-_x-(width*0.5), -_y-(height*0.5));
+	glTexCoord2f(1, 1); glVertex2f(_x+(width*0.5), -_y- (height *0.5));
+	glTexCoord2f(1, 0); glVertex2f(_x+ (width *0.5), _y+ (height *0.5));
+	glTexCoord2f(0, 0); glVertex2f(-_x- (width *0.5), _y+ (height *0.5));
 	glEnd();
 	glPopMatrix();
 }
