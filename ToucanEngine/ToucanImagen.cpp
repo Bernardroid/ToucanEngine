@@ -24,15 +24,26 @@ void ToucanImagen::CargarImagen(const char * _url)
 
 
 }
+void Toucan_Imagen::SetPos(Vector2 _pos)
+{
+	pos = _pos;
+}
+Vector2 Toucan_Imagen::GetPos()
+{
+	return pos;
+}
 void ToucanImagen::DibujarImagen(int _x, int _y)
 {
 	glPushMatrix();
 	glBindTexture(GL_TEXTURE_2D, 1);
+	glScalef(scalex, scaley, 1);
+	glRotatef(angle, 0, 0, rotz);
+	glTranslatef(transx, transy, 0);
 	glBegin(GL_QUADS);
-	glTexCoord2f(0, 1);	glVertex2f(-_x-(width*0.5), -_y-(height*0.5));
-	glTexCoord2f(1, 1); glVertex2f(_x+(width*0.5), -_y- (height *0.5));
-	glTexCoord2f(1, 0); glVertex2f(_x+ (width *0.5), _y+ (height *0.5));
-	glTexCoord2f(0, 0); glVertex2f(-_x- (width *0.5), _y+ (height *0.5));
+	glTexCoord2f(0, 1);	glVertex2f(pos.x-(width*0.5), pos.y-(height*0.5));
+	glTexCoord2f(1, 1); glVertex2f(pos.x +(width*0.5), pos.y - (height *0.5));
+	glTexCoord2f(1, 0); glVertex2f(pos.x + (width *0.5), pos.y + (height *0.5));
+	glTexCoord2f(0, 0); glVertex2f(pos.x - (width *0.5), pos.y + (height *0.5));
 	glEnd();
 	glPopMatrix();
 }
