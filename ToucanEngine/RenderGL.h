@@ -1,5 +1,7 @@
 #pragma once
-#include "Vector2.h"
+
+#include "Toucan_Tween.h"
+
 class RenderGL
 {
 	public:
@@ -10,12 +12,18 @@ class RenderGL
 		void inicializar();
 		//Se llama al momento de libarse
 		void liberar();
-
-
 		//Funcion que se actualiza cada frame
 		void update();
 		//Funcion encargado de dibujar
 		void render();
+		unsigned int TexturaUno;
+		ToucanImagen jiggly;
+
+		
+		int maxTime = 5;
+
+		Vector2 posJig;
+
 };
 
 extern RenderGL g_renderGL; //Singleton

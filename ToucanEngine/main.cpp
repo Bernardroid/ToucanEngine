@@ -1,11 +1,11 @@
 #include "SDL.h"
 #include "RenderGL.h"
-#include <stdio.h>
 #include <string>
+#include "SDL_image.h"
 
 //Dimensiones de la ventana
-const int SCREEN_WIDTH = 1500;
-const int SCREEN_HEIGHT = 1000;
+const int SCREEN_WIDTH = 640;
+const int SCREEN_HEIGHT = 480;
 
 //Inicializa SDL, crea ventana y lo liga a openGL
 bool init();
@@ -55,6 +55,11 @@ bool init()
 	}
 	else
 	{
+		IMG_Init(IMG_INIT_JPG);
+		IMG_Init(IMG_INIT_PNG);
+
+
+
 		//Indicamos que usaremos OPenGL
 		SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 2);
 		SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 1);
@@ -99,6 +104,9 @@ void close()
 	//Destruimos ventana
 	SDL_DestroyWindow(gWindow);
 	gWindow = NULL;
+	//CERRAMOS SDL_IMAGE
+	IMG_Quit();
+
 	//Cerramos SDL
 	SDL_Quit();
 }
