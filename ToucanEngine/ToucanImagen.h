@@ -1,24 +1,22 @@
 #pragma once
 #include <string>
-#include "Vector2.h"
 #include "SDL_image.h"
 #include "SDL_opengl.h"
+#include "Vector2.h"
 #include "tweeny\tweeny.h"
+#include "Button.h"
 
+using std::string;
 
 class ToucanImagen
 {
 public:
-	
-	//Constructores
 	///<summary>Constructores</summary>
 	ToucanImagen();
-	//Carga una imagen de la ubicacion dada 
 	///<summary>Carga una imagen de la ubicacion dada </summary>
 	void CargarImagen(const char * _url);
-	//Dibuja la imagen en su posicion dada
 	///<summary>Dibuja la imagen en su posicion dada </summary>
-	void DibujarImagen();
+	void DibujarImagen(int _x,int _y);
 
 	//Get y Set de Posicion
 	Vector2 GetPos();
@@ -29,18 +27,18 @@ public:
 	float rotz=1;
 	//Set Rotation
 	void SetRotation(float _angle);
-	
-	//Set Scale
-	void SetScale(float _x, float _y);
-	void SetScale(Vector2 _xy);
+
 	//Escala
 	float scalex = 1;
 	float scaley = 1;
+	//Set Scale
+	void SetScale(float _x, float _y);
+	void SetScale(Vector2 _xy);
+
 	//Posicion
 	Vector2 pos;
 	float transx = 0;
 	float transy = 0;
-
 	
 	/*
 	Agregar
@@ -57,7 +55,6 @@ private:
 	//Dejar vacio
 	int width;
 	int height;
-	
 	GLuint textura;
 	SDL_Surface * imagen;
 	int mode;

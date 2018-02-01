@@ -1,11 +1,11 @@
 #include "SDL.h"
 #include "RenderGL.h"
+#include <stdio.h>
 #include <string>
-#include "SDL_image.h"
 
 //Dimensiones de la ventana
-const int SCREEN_WIDTH = 640;
-const int SCREEN_HEIGHT = 480;
+const int SCREEN_WIDTH = 1500;
+const int SCREEN_HEIGHT = 1000;
 
 //Inicializa SDL, crea ventana y lo liga a openGL
 bool init();
@@ -36,7 +36,25 @@ void handleKeys(unsigned char _key, int _x, int _y)
 //Mouse
 void handleMouse(SDL_Event* _evt, int _x, int _y)
 {
-
+	//Click mouse izq
+	if (_evt->button.button == SDL_BUTTON_LEFT)
+	{
+		//_x de 0 a 1500 izq a der
+		//_y de 0 a 1000 arr a abajo
+		//x -15 a 15
+		//y -10 a 10
+		//Cambia coordenadas de pantalla a coordenadas de camara Ortho
+		float x = (((float)_x * 2) - 1500) / 100;
+		float y = (((float)_y * 2) - 1000) / -100;
+		//Checa los botones al hacerles click
+		for (int i = 1; i <= g_renderGL.buttonList.Count(); i++)
+		{
+			if (x <= g_renderGL.buttonList.GetValue(i).buttonX + (g_renderGL.buttonList.GetValue(i).width*0.5) && x >= g_renderGL.buttonList.GetValue(i).buttonX - (g_renderGL.buttonList.GetValue(i).width*0.5) && y <= g_renderGL.buttonList.GetValue(i).buttonY + (g_renderGL.buttonList.GetValue(i).height*0.5) && y >= g_renderGL.buttonList.GetValue(i).buttonY - (g_renderGL.buttonList.GetValue(i).height*0.5))
+			{
+				g_renderGL.buttonList.GetValue(i).OnButtonClicked();
+			}
+		}
+	}
 }
 
 //------ FIN CORE -------------------------------------------------------------------------------
@@ -57,9 +75,6 @@ bool init()
 	{
 		IMG_Init(IMG_INIT_JPG);
 		IMG_Init(IMG_INIT_PNG);
-
-
-
 		//Indicamos que usaremos OPenGL
 		SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 2);
 		SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 1);
@@ -73,6 +88,9 @@ bool init()
 		}
 		else
 		{
+			//SDL_GetRendererOutputSize(gWindow, &g_renderGL.w, &g_renderGL.h);
+			g_renderGL.w= SDL_GetWindowSurface(gWindow)->w;
+			g_renderGL.h = SDL_GetWindowSurface(gWindow)->h;
 			//Creamos COntexto de OpenGL
 			gContext = SDL_GL_CreateContext(gWindow);
 			if (gContext == NULL)
@@ -93,7 +111,7 @@ bool init()
 			}
 		}
 	}
-
+	
 	return success;
 }
 
@@ -104,10 +122,8 @@ void close()
 	//Destruimos ventana
 	SDL_DestroyWindow(gWindow);
 	gWindow = NULL;
-	//CERRAMOS SDL_IMAGE
-	IMG_Quit();
-
 	//Cerramos SDL
+	IMG_Quit();
 	SDL_Quit();
 }
 

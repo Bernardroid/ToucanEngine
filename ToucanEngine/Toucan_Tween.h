@@ -23,17 +23,17 @@
 
 	///Mover(Render)
 	//Mover Objeto en tiempo determinado desde pos Actual
-	void MoverLocal(ToucanImagen* _imagen, Vector2 _to, float time);
-	void MoverGlobal(ToucanImagen* _imagen, Vector2 _to, float time);
+	void MoverLocal(Toucan_Imagen* _imagen, Vector2 _to, float time);
+	void MoverGlobal(Toucan_Imagen* _imagen, Vector2 _to, float time);
 
 
 	///Rotar(Render)
 	//Rotar Objeto en tiempo determinado desde rot Actual
-	void Rotar(ToucanImagen* _imagen, float _grados, float time);
+	void Rotar(Toucan_Imagen* _imagen, float _grados, float time);
 
 	///Escalar(Render)
 	//Escalar Objeto en tiempo determinado desde escala actual
-	void Escalar(ToucanImagen* _imagen, float _scalex, float _scaley, float time);
+	void Escalar(Toucan_Imagen* _imagen, float _scalex, float _scaley, float time);
 
 	///Manejar Tiempo (Update)
 	void InicioTiempo();
@@ -41,8 +41,8 @@
 	//Declara Tween Para determianr el Tiempo del movimiento
 	void DeclararTween(int _from, int _to, int _during);
 	///
-	void doMoverLocal(ToucanImagen* _imagen);
-	void doMoverGlobal(ToucanImagen* _imagen);
+	void doMoverLocal(Toucan_Imagen* _imagen);
+	void doMoverGlobal(Toucan_Imagen* _imagen);
 
-	void doRotar(ToucanImagen* _imagen);
-	void doEscalar(ToucanImagen* _imagen);
+	void doRotar(Toucan_Imagen* _imagen);
+	void doEscalar(Toucan_Imagen* _imagen);

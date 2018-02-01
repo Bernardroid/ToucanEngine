@@ -1,4 +1,4 @@
-#include "Toucan_Imagen.h"
+#include "ToucanImagen.h"
 ToucanImagen::ToucanImagen()
 {
 
@@ -21,7 +21,7 @@ void ToucanImagen::CargarImagen(const char * _url)
 	width = (imagen->w)*0.01;
 	height = (imagen->h)*0.01;
 	
-	
+
 
 }
 void ToucanImagen::SetPos(Vector2 _pos)
@@ -54,7 +54,7 @@ void ToucanImagen::SetScale(Vector2 _xy)
 	scaley = _xy.y;
 }
 
-void ToucanImagen::DibujarImagen()
+void ToucanImagen::DibujarImagen(int _x, int _y)
 {
 	glPushMatrix();
 	glBindTexture(GL_TEXTURE_2D, 1);
@@ -68,6 +68,4 @@ void ToucanImagen::DibujarImagen()
 	glTexCoord2f(0, 0); glVertex2f(pos.x - (width *0.5), pos.y + (height *0.5));
 	glEnd();
 	glPopMatrix();
-
-
 }

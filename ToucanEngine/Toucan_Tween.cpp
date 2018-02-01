@@ -1,7 +1,7 @@
 #include "Toucan_Tween.h"
 
 
-void doMoverLocal(ToucanImagen* _imagen)
+void doMoverLocal(Toucan_Imagen* _imagen)
 {
 	if (timerTween <= tweenDur)
 	{
@@ -9,7 +9,7 @@ void doMoverLocal(ToucanImagen* _imagen)
 		_imagen->pos.y += speedy;
 	}
 }
-void doMoverGlobal(ToucanImagen* _imagen)
+void doMoverGlobal(Toucan_Imagen* _imagen)
 {
 	if (timerTween <= tweenDur)
 	{
@@ -17,7 +17,7 @@ void doMoverGlobal(ToucanImagen* _imagen)
 		_imagen->transy += speedy;
 	}
 }
-void doRotar(ToucanImagen* _imagen)
+void doRotar(Toucan_Imagen* _imagen)
 {
 	if (timerTween <= tweenDur)
 	{
@@ -25,7 +25,7 @@ void doRotar(ToucanImagen* _imagen)
 	}
 
 }
-void doEscalar(ToucanImagen* _imagen)
+void doEscalar(Toucan_Imagen* _imagen)
 {
 	if (timerTween <= tweenDur)
 	{
@@ -44,7 +44,7 @@ void DeclararTween(int _from, int _to, int _during)
 	tween = tweeny::from(_from).to(_to).during(_during);
 	tweenDur = tween.duration();
 }
-void MoverLocal(ToucanImagen * _imagen, Vector2 _to, float time)
+void MoverLocal(Toucan_Imagen * _imagen, Vector2 _to, float time)
 {
 	if (calcSpeed == false)
 	{
@@ -64,7 +64,7 @@ void MoverLocal(ToucanImagen * _imagen, Vector2 _to, float time)
 	}
 	doMoverLocal(_imagen);
 }
-void MoverGlobal(ToucanImagen * _imagen, Vector2 _to, float time)
+void MoverGlobal(Toucan_Imagen * _imagen, Vector2 _to, float time)
 {
 	if (calcSpeed == false)
 	{
@@ -84,7 +84,7 @@ void MoverGlobal(ToucanImagen * _imagen, Vector2 _to, float time)
 	}
 	doMoverGlobal(_imagen);
 }
-void Rotar(ToucanImagen* _imagen, float _grados, float time)
+void Rotar(Toucan_Imagen* _imagen, float _grados, float time)
 {
 	if (calcRotvel == false)
 	{
@@ -100,7 +100,7 @@ void Rotar(ToucanImagen* _imagen, float _grados, float time)
 	}
 	doRotar(_imagen);
 }
-void Escalar(ToucanImagen* _imagen, float _scalex, float _scaley, float time)
+void Escalar(Toucan_Imagen* _imagen, float _scalex, float _scaley, float time)
 {
 	if (calcScalevel == false)
 	{
