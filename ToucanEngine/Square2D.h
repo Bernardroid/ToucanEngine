@@ -1,9 +1,6 @@
 #pragma once
-#include "Transform.h"
-#include "Color.h"
-#include "Vector2.h"
-#include "Vector3.h"
-class Square2D
+#include "Primitivas2D.h"
+class Square2D : public Primitivas2D
 {
 public:
 	Transform myTransform;
@@ -21,5 +18,5 @@ public:
 	void SetColor(Vector3 _color);
 	void SetColor(float _x, float _y, float _z);
 	//Dibuja el Cuadrado con los datos de su Transform(myTransform) y Color(myColor)
-	void Draw();
+	void DrawSquare();
 };

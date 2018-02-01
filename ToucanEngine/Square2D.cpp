@@ -53,7 +53,7 @@ Square2D::Square2D()
 }
 
 //Funcion que imprime cuadrado con los datos de su Transform y Color
-void Square2D::Draw()
+void Square2D::DrawSquare()
 {
 	glPushMatrix();
 		glColor4f(myColor.r, myColor.g, myColor.b, myColor.a);
